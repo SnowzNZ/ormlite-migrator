@@ -1,11 +1,11 @@
-package one.trueorigin.migrator;
+package dev.snowz.ormlitemigrator;
 
 public class DatabaseFieldType {
 
-    private String fieldName;
-    private String type;
+    private final String fieldName;
+    private final String type;
 
-    public DatabaseFieldType(String fieldName, String type) {
+    public DatabaseFieldType(final String fieldName, final String type) {
         this.fieldName = fieldName;
         this.type = type;
     }
@@ -21,8 +21,8 @@ public class DatabaseFieldType {
     @Override
     public String toString() {
         return "DatabaseFieldType{" +
-                "fieldName='" + fieldName + '\'' +
-                ", type='" + type + '\'' +
-                '}';
+            "fieldName='" + fieldName + '\'' +
+            ", type='" + type + '\'' +
+            '}';
     }
 }

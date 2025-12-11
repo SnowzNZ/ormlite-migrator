@@ -1,4 +1,4 @@
-package one.trueorigin.migrator;
+package dev.snowz.ormlitemigrator;
 
 public class TableAnnotationNotFound extends Throwable {
 }

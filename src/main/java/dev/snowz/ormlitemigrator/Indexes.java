@@ -1,26 +1,26 @@
-package one.trueorigin.migrator;
+package dev.snowz.ormlitemigrator;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Indexes {
 
-    private String name;
+    private final String name;
     private List<String> columns;
-    private Boolean isUnqinue;
+    private Boolean isUnique;
     private String key_name;
 
-    public Indexes(String name) {
+    public Indexes(final String name) {
         this.name = name;
         columns = new ArrayList<>();
     }
 
-    public void setColumns(List<String> columns) {
+    public void setColumns(final List<String> columns) {
         this.columns = columns;
     }
 
-    public void setUnqinue(Boolean unqinue) {
-        isUnqinue = unqinue;
+    public void setUnique(final Boolean unique) {
+        isUnique = unique;
     }
 
     public String getName() {
@@ -31,16 +31,16 @@ public class Indexes {
         return columns;
     }
 
-    public Boolean getUnqinue() {
-        return isUnqinue;
+    public Boolean getUnique() {
+        return isUnique;
     }
 
     @Override
     public String toString() {
         return "Indexes{" +
-                "name='" + name + '\'' +
-                ", columns=" + columns +
-                ", isUnqinue=" + isUnqinue +
-                '}';
+            "name='" + name + '\'' +
+            ", columns=" + columns +
+            ", isUnique=" + isUnique +
+            '}';
     }
 }

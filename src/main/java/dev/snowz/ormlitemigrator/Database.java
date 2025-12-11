@@ -1,4 +1,4 @@
-package one.trueorigin.migrator;
+package dev.snowz.ormlitemigrator;
 
 import java.sql.Connection;
 
@@ -6,15 +6,17 @@ public class Database {
 
     public static final String MySQLDriver = "com.mysql.cj.jdbc.Driver";
 
-    //TODO
-    public static final String SQLiteDriver = "com.mysql.cj.jdbc.Driver";
+    public static final String SQLiteDriver = "org.sqlite.JDBC";
+    public static final String PostgresDriver = "org.postgresql.Driver";
+    public static final String MariaDBDriver = "org.mariadb.jdbc.Driver";
+    public static final String H2Driver = "org.h2.Driver";
 
     public String getConnectionString() {
         return connectionString;
     }
 
     enum Type {
-        MySQL, Postgres, SqlLite
+        MySQL, Postgres, SqlLite, MariaDB, H2
     }
 
     public Type getType() {
@@ -29,12 +31,12 @@ public class Database {
         return connection;
     }
 
-    private Type type;
-    private String driver;
-    private Connection connection;
-    private String connectionString;
+    private final Type type;
+    private final String driver;
+    private final Connection connection;
+    private final String connectionString;
 
-    public Database(Type type, String driver, Connection connection, String connectionString) {
+    public Database(final Type type, final String driver, final Connection connection, final String connectionString) {
         this.type = type;
         this.driver = driver;
         this.connection = connection;
